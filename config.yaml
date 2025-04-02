@@ -1,0 +1,47 @@
+# Model Configuration
+models:
+  model1:
+    name: "google/gemma-1.1-2b-it"
+    display_name: "Gemma-1.1-2B-IT"
+  model2:
+    name: "gpt2"
+    display_name: "GPT-2"
+
+# Hardware Configuration
+hardware:
+  use_gpu: true
+  dtype: "float16"  # options: float16, float32
+  low_cpu_mem_usage: true
+
+# Dataset Configuration
+dataset:
+  name: "mmlu"  #TODO options: mmlu, hellaswag, arc, etc.
+  provider: "cais/mmlu"  # HuggingFace dataset provider
+  subsets:
+    - "high_school_mathematics"
+    - "high_school_physics"
+    - "high_school_chemistry"
+  split: "test"  # options: test, validation
+  sample_size: -1  # Use -1 for full dataset, or positive number for sample size
+  random_seed: 42  # for reproducibility
+
+# Prompt Configuration
+prompt:
+  num_shots: 5  # Number of few-shot examples to include (0 for zero-shot)
+  include_instructions: true  # Whether to include task instructions
+  format: "mmlu"  #TODO Format to use for prompts (mmlu, etc.)
+
+# Generation Configuration
+generation:
+  max_new_tokens: 5
+  do_sample: false
+  temperature: 1.0
+  num_beams: 4
+
+# Output Configuration
+output:
+  save_results: true
+  results_dir: "benchmark_results"
+  save_format: ["csv", "json"]  # options: csv, json, pickle
+  plot_results: true
+  verbose: true 

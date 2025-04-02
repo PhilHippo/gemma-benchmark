@@ -1,0 +1,24 @@
+# Core ML dependencies
+torch>=2.6.0
+transformers>=4.50.0
+datasets>=3.5.0
+accelerate>=1.6.0
+
+# Evaluation and metrics
+evaluate>=0.4.3
+rouge_score>=0.1.2
+nltk>=3.9.1
+
+# Data processing and visualization
+numpy>=2.2.0
+pandas>=2.2.0
+matplotlib>=3.10.0
+
+# Utilities
+tqdm>=4.67.0
+PyYAML>=6.0.0
+fire>=0.7.0
+
+# Required by dependencies
+huggingface-hub>=0.30.0
+fsspec>=2024.12.0 
